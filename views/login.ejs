@@ -1,0 +1,30 @@
+<%- include ("./partials/header.ejs") %>
+<%- include ("./partials/homenavbar.ejs") %>
+<body>
+    <div class="container mt-2">
+        <% if(result == 'Dados invalidos') { %>
+                        <div class="alert alert-danger"><%= result %></div>
+                        <br>
+                    <% } %>
+        <form action="/login/auth" method="POST" class="mt-2">
+            <div class="card">
+                
+                <div class="card-header">
+                    <h4>Informe os dados abaixo:</h4>
+                </div>
+                <div class="card-body">
+
+                    <input type="text" name="email" id="email" placeholder="Seu e-mail" class="form-control"><br>
+                    <input type="password" name="senha" id="senha" placeholder="Sua senha" class="form-control"><br>
+                
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-success btn-block">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<%- include ("./partials/footer.ejs") %>
